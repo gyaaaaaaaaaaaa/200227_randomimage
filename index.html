@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery.js"></script>
+    <script src="html2canvas.js"></script>
+    <!-- Place your kit's code here -->
+    <style>
+    .layer {
+      position: absolute;
+    }
+
+
+    #img_layer1 {
+      height: 400px;
+      margin: 0 auto;
+      position: absolute;
+      width: 400px;
+      z-index: 10;
+    }
+
+
+    #img_layer2 {
+      height: 400px;
+      margin: 0 auto;
+      position: absolute;
+      width: 400px;
+      z-index: 10;
+    }
+
+    #img_layer3 {
+      height: 400px;
+      margin: 0 auto;
+      position: absolute;
+      width: 400px;
+      z-index: 10;
+    }
+
+    #img_layer4 {
+      height: 400px;
+      margin: 0 auto;
+      position: absolute;
+      width: 400px;
+      z-index: 10;
+    }
+
+
+    #white {
+      height: 400px;
+      margin: 0 auto;
+      position: absolute;
+      width: 400px;
+      z-index: 20;
+    }
+
+
+    .output {
+      left: 0;
+      position: relative;
+      top: 0;
+      width: 100%;
+      z-index: 30;
+    }
+
+
+    table {
+      width: 100%;
+    }
+
+
+    th {
+      width: 25%;
+    }
+
+
+    /* pc */
+    @media screen and (min-width: 480px) {
+    }
+
+
+    /* sp */
+    @media screen and (max-width: 479px) {
+    }
+    </style>
+  </head>
+
+  <body>
+    <div onclick="test()">
+      これを押すてすと
+    </div>
+    <div id="img_layer">
+      <div id="img_layer1">
+        <img src="background_00001.png" id="background1" class="layer">
+        <img src="tree_00001.png" id="tree1" class="layer">
+        <img src="character_00001.png" id="character1" class="layer">
+      </div>
+      <div id="img_layer2">
+        <img src="background_00001.png" id="background2" class="layer">
+        <img src="tree_00001.png" id="tree2" class="layer">
+        <img src="character_00001.png" id="character2" class="layer">
+      </div>
+      <div id="img_layer3">
+        <img src="background_00001.png" id="background3" class="layer">
+        <img src="tree_00001.png" id="tree3" class="layer">
+        <img src="character_00001.png" id="character3" class="layer">
+      </div>
+      <div id="img_layer4">
+        <img src="background_00001.png" id="background4" class="layer">
+        <img src="tree_00001.png" id="tree4" class="layer">
+        <img src="character_00001.png" id="character4" class="layer">
+      </div>
+      <div id="white">
+        <img src="white.png" class="layer">
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            <img src="" id="img_output1" class="output">
+          </th>
+          <th>
+            <img src="" id="img_output2" class="output">
+          </th>
+          <th>
+            <img src="" id="img_output3" class="output">
+          </th>
+          <th>
+            <img src="" id="img_output4" class="output">
+          </th>
+        </tr>
+      </thead>
+    </table>
+  </body>
+  <script>
+  const background =[
+    "background_00001.png",
+    "background_00002.png",
+  ];
+
+
+  const tree =[
+    "tree_00001.png",
+    "tree_00002.png",
+  ];
+
+
+  const character =[
+    "character_00001.png",
+    "character_00002.png",
+  ];
+
+
+  function test1() {
+    /* background1 */
+    let background1 = Math.floor(Math.random() * background.length);
+    let background_id = document.getElementById("background1");
+    background_id.src = background[background1];
+    console.log(background1);
+
+
+    /* tree1 */
+    let tree1 = Math.floor(Math.random() * tree.length);
+    let tree_id = document.getElementById("tree1");
+    tree_id.src = tree[tree1];
+
+
+    /* character1 */
+    let character1 = Math.floor(Math.random() * character.length);
+    let character_id = document.getElementById("character1");
+    character_id.src = character[character1];
+
+
+    let element1 = $('#img_layer1')[0];
+    html2canvas(element1, { onrendered: function(canvas) {
+      let data_url_scheme1 = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+      $('#img_output1')[0].src = data_url_scheme1;
+    }});
+  }
+
+
+  function test2() {
+    /* background2 */
+    let background2 = Math.floor(Math.random() * background.length);
+    let background_id = document.getElementById("background2");
+    background_id.src = background[background2];
+    console.log(background2);
+
+
+    /* tree2 */
+    let tree2 = Math.floor(Math.random() * tree.length);
+    let tree_id = document.getElementById("tree2");
+    tree_id.src = tree[tree2];
+
+
+    /* character2 */
+    let character2 = Math.floor(Math.random() * character.length);
+    let character_id = document.getElementById("character2");
+    character_id.src = character[character2];
+
+
+    let element2 = $('#img_layer2')[0];
+    html2canvas(element2, { onrendered: function(canvas) {
+      let data_url_scheme2 = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+      $('#img_output2')[0].src = data_url_scheme2;
+    }});
+  }
+
+
+  function test3() {
+    /* background3 */
+    let background3 = Math.floor(Math.random() * background.length);
+    let background_id = document.getElementById("background3");
+    background_id.src = background[background3];
+    console.log(background3);
+
+
+    /* tree3 */
+    let tree3 = Math.floor(Math.random() * tree.length);
+    let tree_id = document.getElementById("tree3");
+    tree_id.src = tree[tree3];
+
+
+    /* character3 */
+    let character3 = Math.floor(Math.random() * character.length);
+    let character_id = document.getElementById("character3");
+    character_id.src = character[character3];
+
+
+    let element3 = $('#img_layer3')[0];
+    html2canvas(element3, { onrendered: function(canvas) {
+      let data_url_scheme3 = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+      $('#img_output3')[0].src = data_url_scheme3;
+    }});
+  }
+
+
+  function test4() {
+    /* background4 */
+    let background4 = Math.floor(Math.random() * background.length);
+    let background_id = document.getElementById("background4");
+    background_id.src = background[background4];
+    console.log(background4);
+
+
+    /* tree4 */
+    let tree4 = Math.floor(Math.random() * tree.length);
+    let tree_id = document.getElementById("tree4");
+    tree_id.src = tree[tree4];
+
+
+    /* character4 */
+    let character4 = Math.floor(Math.random() * character.length);
+    let character_id = document.getElementById("character4");
+    character_id.src = character[character4];
+
+
+    let element4 = $('#img_layer4')[0];
+    html2canvas(element4, { onrendered: function(canvas) {
+      let data_url_scheme4 = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+      $('#img_output4')[0].src = data_url_scheme4;
+    }});
+  }
+
+
+  function test() {
+    test1();
+    test2();
+    test3();
+    test4();
+  }
+  </script>
+</html>

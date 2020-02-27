@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Place your kit's code here -->
+    <style>
+    .test1 {
+      display: none;
+      position: absolute;
+      top: 8px;
+    }
+
+
+    .test2 {
+      display: block;
+      position: absolute;
+      top: 8px;
+    }
+    </style>
+    <script type="text/javascript">
+    function testdayo1() {
+      document.getElementById("testyo1").style.display = "block";
+      document.getElementById("testyo2").style.display = "none";
+    };
+
+
+    function testdayo2() {
+      document.getElementById("testyo1").style.display = "none";
+      document.getElementById("testyo2").style.display = "block";
+    };
+    </script>
+  </head>
+
+  <body>
+    <!-- Ready to use Font Awesome. Activate interlock. Dynotherms - connected. Infracells - up. Icons are go! -->
+    <!-- 全idを入れた配列を用意して、その中からn番目の配列名を除外してすべてをnoneにするとかにすればいいのでは -->
+    <img src="181227_00006.png" class="test1" id="testyo1">
+    <img src="181227_00007.png" class="test2" id="testyo2">
+    <img src="181227_00004.png">
+    <p onclick="testdayo1()">わ〜</p>
+    <p onclick="testdayo2()">ん。。</p>
+  </body>
+</html>
